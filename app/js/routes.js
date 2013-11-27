@@ -1,4 +1,4 @@
-angular.module("app").config(function($stateProvider, $locationProvider) {
+angular.module("app").config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $locationProvider.html5Mode(true);
 
@@ -19,8 +19,11 @@ angular.module("app").config(function($stateProvider, $locationProvider) {
     templateUrl: 'js/books/books.html',
     controller: 'BooksController'
   });
+
+  $urlRouterProvider
+    .otherwise('/login');
 });
 
 angular.module("app").run(function($state){
-  $state.transitionTo('login');
+  // do stuff here
 });
