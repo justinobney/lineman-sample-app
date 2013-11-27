@@ -48,8 +48,13 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   less: {
     compile: {
       options: {
-        paths: ["vendor/css/normalize.css", "vendor/css/**/*.css", "app/css/**/*.less"]
+        paths: [
+          "bower_components/bootstrap/less/bootstrap.less", 
+          "app/css/**/*.less"
+        ]
       }
-    }
+    },
+    vendor: [
+    ]
   }
 });
