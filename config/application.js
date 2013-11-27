@@ -55,7 +55,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     }
   },
 
-  enableSass: true,
+  // enableSass: true,
 
   // generates a sourcemap for js, specs, and css with inlined sources
   // grunt-angular-templates expects that a module already be defined to inject into
@@ -109,11 +109,12 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     less: {
       files: ["<%= files.less.vendor %>", "<%= files.less.app %>"],
       tasks: ["less", "concat_sourcemap:css"]
-    },
-    sass: {
-      files: ["<%= files.sass.vendor %>", "<%= files.sass.app %>"],
-      tasks: ["sass", "concat_sourcemap:css"]
     }
+    // ,
+    // sass: {
+    //   files: ["<%= files.sass.vendor %>", "<%= files.sass.app %>"],
+    //   tasks: ["sass", "concat_sourcemap:css"]
+    // }
   }
 
 });

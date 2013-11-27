@@ -1,28 +1,26 @@
-angular.module("app").config(function($routeProvider, $locationProvider) {
+angular.module("app").config(function($stateProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);
 
-  $routeProvider.when('/login', {
+  $stateProvider.state('login', {
     templateUrl: 'js/login/login.html',
-    controller: 'LoginController'
+    controller: 'LoginController',
+    url: '/login'
   });
 
-  $routeProvider.when('/home', {
+  $stateProvider.state('home', {
+    url: '/home',
     templateUrl: 'js/home/home.html',
     controller: 'HomeController'
   });
 
-  $routeProvider.when('/list-of-books', {
+  $stateProvider.state('listOfBooks', {
+    url: '/ist-of-books',
     templateUrl: 'js/books/books.html',
     controller: 'BooksController'
-    // uncomment if you want to see an example of a route that resolves a request prior to rendering
-    // resolve: {
-    //   books : function(BookService) {
-    //     return BookService.get();
-    //   }
-    // }
   });
+});
 
-  $routeProvider.otherwise({ redirectTo: '/login' });
-
+angular.module("app").run(function($state){
+  $state.transitionTo('login');
 });
