@@ -48,9 +48,9 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
 
   css: {
     vendor: [
-      "bower_components/Font-Awesome/css/font-awesome.css"
+      
     ]
-  }
+  },
 
   less: {
     compile: {
