@@ -32,7 +32,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
       "bower_components/jquery/jquery.js",
       "bower_components/angular/angular.js",
       "bower_components/angular-ui-router/release/angular-ui-router.js",
-      "bower_components/angular-resource/angular-resource.js"
+      "bower_components/angular-resource/angular-resource.js",
+      "bower_components/bootstrap/dist/js/bootstrap.js"
     ],
     app: [
       "app/js/app.js",
@@ -44,6 +45,12 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
       "app/js/**/_spec/*.js"
     ]
   },
+
+  css: {
+    vendor: [
+      "bower_components/Font-Awesome/css/font-awesome.css"
+    ]
+  }
 
   less: {
     compile: {
