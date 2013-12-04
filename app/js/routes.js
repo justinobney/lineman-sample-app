@@ -14,9 +14,20 @@
         });
 
         $stateProvider.state('home', {
-            url: '/home',
             templateUrl: 'js/home/home.html',
-            controller: 'HomeController'
+            abstract: true
+        });
+
+        $stateProvider.state('home.index', {
+            url: '/home',
+            views: {
+              "home-main-nav": {
+                templateUrl: 'js/home/home-top-nav.html'
+              },
+              "home-content": {
+                templateUrl: 'js/home/index.html'
+              }
+            }
         });
 
         $urlRouterProvider

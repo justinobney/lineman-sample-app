@@ -3,6 +3,10 @@ body {
   padding-bottom: 40px;
   background-color: #FFF;
 }
+
+#ui-view-home-content {
+    padding-top: 40px;
+}
  
 .form-signin {
   max-width: 330px;
