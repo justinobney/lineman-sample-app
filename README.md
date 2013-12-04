@@ -10,8 +10,8 @@ It includes the following features:
 
 1. Template Precompilation into Angulars $templateCache using `grunt-angular-templates`
 2. A basic login, logout service bound to sample routes inside `config/server.js`
-3. A router, and 2 views `home` and `login`
-4. A directive that shows a message on mouseover
+3. ui-router, and 2 views `home` and `login`
+4. Bower dependency management
 5. 2 Controllers, for `home` and `login`, with $scope variables set and bound
 6. A working, bound login form (username/password don't matter, but are required)
 7. Configured [grunt-ngmin](https://github.com/btford/grunt-ngmin) so you don't have to fully qualify angular dependencies.
@@ -21,10 +21,11 @@ It includes the following features:
 
 # Instructions
 
-1. `git clone https://github.com/davemo/lineman-angular-template.git my-lineman-app`
+1. `git clone https://github.com/justinobney/lineman-sample-app.git my-lineman-app`
 2. `cd my-lineman-app`
 3. `sudo npm install -g lineman`
 4. `npm install`
+5. `bower install`
 5. `lineman run`
 6. open your web browser to localhost:8000
 
