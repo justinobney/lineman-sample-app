@@ -1,23 +1,35 @@
-angular.module("app").config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+(function() {
+    'use strict';
 
-  $locationProvider.html5Mode(true);
+    var app = angular.module("app");
 
-  $stateProvider.state('login', {
-    templateUrl: 'js/login/login.html',
-    controller: 'LoginController',
-    url: '/login'
-  });
+    app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 
-  $stateProvider.state('home', {
-    url: '/home',
-    templateUrl: 'js/home/home.html',
-    controller: 'HomeController'
-  });
+        $locationProvider.html5Mode(true);
 
-  $urlRouterProvider
-    .otherwise('/login');
-});
+        $stateProvider.state('login', {
+            templateUrl: 'js/login/login.html',
+            controller: 'LoginController',
+            url: '/login'
+        });
 
-angular.module("app").run(function($state){
-  // do stuff here
-});
+        $stateProvider.state('home', {
+            url: '/home',
+            templateUrl: 'js/home/home.html',
+            controller: 'HomeController'
+        });
+
+        $urlRouterProvider
+            .otherwise('/login');
+    });
+
+    app.run(function($state, AuthenticationService) {
+        // do stuff here
+        AuthenticationService.checkUser().then(function(response){
+          var user = response.data;
+          if(!user.name){
+            $state.transitionTo('login');
+          }
+        });
+    });
+})();

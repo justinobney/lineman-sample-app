@@ -14,20 +14,28 @@
 
 module.exports = {
   drawRoutes: function(app) {
+    var user = {};
+
+    app.get('/user', function(req, res) {
+      res.json(user);
+    });
+
     app.post('/login', function(req, res) {
-      res.json({ message: 'logging in!' });
+      user = { name: 'john smith' };
+      res.json(user);
     });
 
     app.post('/logout', function(req, res) {
+      user = {};
       res.json({ message: 'logging out!'});
     });
 
-    app.get('/books', function (req, res) {
-      res.json([
-        {title: 'Great Expectations', author: 'Dickens'},
-        {title: 'Foundation Series', author: 'Asimov'},
-        {title: 'Treasure Island', author: 'Stephenson'}
-      ]);
-    });
+    // app.get('/books', function (req, res) {
+    //   res.json([
+    //     {title: 'Great Expectations', author: 'Dickens'},
+    //     {title: 'Foundation Series', author: 'Asimov'},
+    //     {title: 'Treasure Island', author: 'Stephenson'}
+    //   ]);
+    // });
   }
 };
