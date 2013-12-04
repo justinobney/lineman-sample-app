@@ -14,12 +14,6 @@ angular.module("app").config(function($stateProvider, $locationProvider, $urlRou
     controller: 'HomeController'
   });
 
-  $stateProvider.state('listOfBooks', {
-    url: '/ist-of-books',
-    templateUrl: 'js/books/books.html',
-    controller: 'BooksController'
-  });
-
   $urlRouterProvider
     .otherwise('/login');
 });
